@@ -13,7 +13,7 @@ Rails.application.routes.draw do
       resources :sessions, only: :create
       resources :movie_details, only: [:show]
       resources :movie_search, only: [:index]
-      resources :movies_top_rated, only [:index]
+      resources :movies_top_rated, only: [:index]
     end
   end
 end

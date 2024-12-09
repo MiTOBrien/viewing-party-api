@@ -1,9 +1,9 @@
 class MovieGateway
   def self.conn
-    conn = Faraday.new(
-      url: "https://api.themoviedb.org",
-      headers: {Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkZmQ1ZmY0NjRmMjYwZjc1YTE2ODQwYjYzZWE1ZWQ3MyIsIm5iZiI6MTczMzE2NDkwOC4wNSwic3ViIjoiNjc0ZGZmNmM1NjJiMDMwYmI1YWRlNmQ0Iiwic2NvcGVzIjpbImFwaV9yZWFkIl0sInZlcnNpb24iOjF9.rQhNDf3plOrbSygg7FeFP6tqV5kimDAhRPJhS8Y6HSo'}
-      )
+      conn = Faraday.new(
+        url: "https://api.themoviedb.org",
+        headers: {Authorization: Rails.application.credentials.tmdb[:key]}
+        )
   end
 
   def self.get_movie_details(movie)
