@@ -5,6 +5,6 @@ class Api::V1::MovieDetailsController < ApplicationController
     
     movie = Movie.new(json)
 
-    render json: MovieDetailsSerializer.new(movie)
+    render json: MovieDetailsSerializer.format_movie_details(movie)
   end
 end

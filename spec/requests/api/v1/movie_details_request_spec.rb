@@ -8,8 +8,8 @@ RSpec.describe "Movie Details API", type: :request do
       expect(response).to be_successful
       json = JSON.parse(response.body, symbolize_names: true)
 
-      expect(json[:data][:id]).to eq("348")
-      expect(json[:data][:type]).to eq("movie_details")
+      expect(json[:data][:id]).to eq(348)
+      expect(json[:data][:type]).to eq("movie")
       expect(json[:data][:attributes][:title]).to eq("Alien")
       expect(json[:data][:attributes][:release_year]).to eq("1979")
       expect(json[:data][:attributes][:vote_average]).to eq(8.159)

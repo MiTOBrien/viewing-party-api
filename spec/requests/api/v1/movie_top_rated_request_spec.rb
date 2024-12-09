@@ -9,7 +9,7 @@ RSpec.describe "Top Rated Movies API", type: :request do
       json = JSON.parse(response.body, symbolize_names: true)
 
       expect(json[:data]).to have_key(:id)
-      expect(json[:data][:type]).to eq("movie_search")
+      expect(json[:data][:type]).to eq("movie")
       expect(json[:data][:attributes]).to have_key(:title)
       expect(json[:data][:attributes]).to have_key(:vote_average)
     end
