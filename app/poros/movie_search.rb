@@ -4,7 +4,6 @@ class MovieSearch
               :vote_average
 
   def initialize(movie_json)
-    # movie = movie_json[:results][0]
     movies = movie_json
     movies.map { |movie| 
       @id = movie[:id]

@@ -14,10 +14,14 @@ class MovieGateway
   end
 
   def self.get_movie_search(query)
-
     response = conn.get("/3/search/movie", {query: query})
     json = JSON.parse(response.body, symbolize_names: true)
     top_20 = json[:results].take(20)
+  end
 
+  def self.get_top_rated_movies
+    response = conn.get("/3/search/movie/top_rated")
+    json = JSON.parse(response.body, symbolize_names: true)
+    top_rated = json[:results].take(20)
   end
 end

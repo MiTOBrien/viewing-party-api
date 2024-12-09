@@ -3,7 +3,6 @@ class MovieSearchSerializer
   attributes :title, :vote_average
 
   def self.format_movie_details(movie)
-    binding.pry
     { data:
         {
           id: movie.id,
