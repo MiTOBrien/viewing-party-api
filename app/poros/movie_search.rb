@@ -5,6 +5,7 @@ class MovieSearch
 
   def initialize(movie_json)
     movies = movie_json
+    
     movies.map { |movie| 
       @id = movie[:id]
       @title = movie[:title]
